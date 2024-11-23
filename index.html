@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="./dist/styles.css">
+</head>
+<body onresize="gridWidth()">
+    <div class="main-root h-screen w-screen bg-gradient-to-b from-indigo-700 via-indigo-800 to-indigo-900">
+        <div id="front-page" class="container-size h-full m-auto bg-gradient-to-b from-slate-300 via-slate-200 to-gray-300 flex-col justify-center items-center gap-10">
+            <h1 class="text-center w-full py-4 text-5xl leading-relaxed lg:text-7xl font-bold text-indigo-950">MEMORY GAME</h1>
+            <form action="javascript:void(0)" method="get" onsubmit="goToGame()" class="flex justify-center items-center flex-col gap-8">
+                <input id="player-name" type="text" class="px-4 py-2 mt-10 border-indigo-950 border-2 rounded-lg font-semibold text-center" placeholder="Enter Your Name" onblur="playerName()" required>
+                <button type="submit" id="start-btn" class="py-4 px-12 bg-slate-950 text-white font-bold rounded-lg" >START</button>
+            </form>
+        </div>
+        <div id="game-page" class="container container-size h-full m-auto bg-gradient-to-b from-slate-300 via-slate-200 to-gray-300 flex flex-col justify-evenly items-center">
+            <h1 class="text-center w-full py-4 lg:text-5xl text-4xl font-semibold border-b-4 border-[#212A31] text-indigo-950">MEMORY GAME</h1>
+            <div id="game-details" class="w-full p-4 grid grid-cols-2 sm:grid-cols-3 justify-between content-center gap-4">
+                <div id="game-buttons" class="flex justify-start justify-self-center items-center gap-4">
+
+                </div>
+                <div id="game-status" class="flex justify-center justify-self-center items-center gap-4">
+
+                </div>
+                <div id="timer" class="flex justify-center col-start-1 col-span-2 sm:col-auto items-center justify-self-center gap-4">
+                    <div id="timer-text" class="flex justify-center items-center flex-wrap">
+
+                    </div>
+                    <div id="count" class="flex justify-center items-center flex-wrap">
+
+                    </div>
+                </div>
+            </div>
+            <div id="gameBoard" class="h-full">
+                
+            </div>
+        </div>
+        <div id="won-page" class="container-size h-full m-auto bg-gradient-to-b from-slate-300 via-slate-200 to-gray-300 flex flex-col justify-center items-center gap-8">
+            <p id="show-name" class="text-center w-full py-4 text-2xl lg:text-4xl font-bold text-red-600"></p>
+            <h1 class="text-center w-full py-4 text-5xl leading-relaxed lg:text-7xl font-bold text-indigo-950">You Won</h1>
+            <div id="score" class="text-2xl font-semibold flex flex-col justify-center items-center gap-4">
+                <div class="flex justify-center items-center gap-4">
+                    <span>
+                        Total Time
+                    </span>
+                    <button id="time" class="p-2 bg-slate-950 text-white block font-bold rounded-lg"></button>
+                </div>
+                <div class="flex justify-center items-center gap-4">
+                    <span>
+                        Score
+                    </span>
+                    <button id="score-count" class="p-2 bg-slate-950 text-white block font-bold rounded-lg"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

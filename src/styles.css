@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply m-0 p-0 font-[Verdana] bg-[#212A31];
+}
+
+#front-page{
+    display: flex;
+}
+
+#won-page{
+    display: none;
+}
+
+
+.container{
+    display: none;
+}
+
+.container-size{
+    @apply w-3/4
+}
+
+.cardback{
+    @apply bg-gradient-to-tr from-[#000] to-[#444];
+}
+.card-align{
+    @apply h-full w-full justify-self-center rounded-md flex justify-center items-center relative;
+}
+
+@media screen and (max-width:768px){
+    .container-size{
+        @apply w-full
+    }
+}
+
