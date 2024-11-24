@@ -227,6 +227,15 @@ function noOfCards() {
     cardsArray.push(cardsMainArray[i]);
     cardsArray.push(cardsMainArray[i]);
   }
+  flipCount = 0;
+  document.getElementById("noOfFlip").innerText = flipCount;
+  count = 0;
+  seconds = 0;
+  minutes = 0;
+  document.getElementById(
+    "timer-count"
+  ).textContent = `${minutes} : ${seconds}`;
+  intervalId = 0;
   shuffleCards();
   displayCards();
   if (gridCount == 5) {
@@ -344,9 +353,51 @@ function goToWin() {
   document.getElementById("front-page").style.display = "none";
   document.getElementById("game-page").style.display = "none";
   document.getElementById("won-page").style.display = "flex";
-  document.getElementById("score-count").innerHTML = flipCount;
   document.getElementById("time").innerText = `${minutes} : ${seconds}`;
-  document.getElementById('show-name').innerHTML = `! Congratulations ${player} !`
+  document.getElementById('show-name').innerHTML = `! Congratulations ${player} !`;
+  if (cardsArray.length == 12) {
+    if (flipCount - cardsArray.length <= 2) {
+      document.getElementById("score-count").innerHTML = "10 / 10";
+    } else if (flipCount - cardsArray.length == 4) {
+      document.getElementById("score-count").innerHTML = "9 / 10";
+    } else if (flipCount - cardsArray.length == 6) {
+      document.getElementById("score-count").innerHTML = "8 / 10";
+    } else if (flipCount - cardsArray.length == 8) {
+      document.getElementById("score-count").innerHTML = "7 / 10";
+    } else if (flipCount - cardsArray.length == 10) {
+      document.getElementById("score-count").innerHTML = "6 / 10";
+    } else {
+      document.getElementById("score-count").innerHTML = "5 / 10";
+    }
+  } else if (cardsArray == 16) {
+    if (flipCount - cardsArray.length <= 2) {
+      document.getElementById("score-count").innerHTML = "10 / 10";
+    } else if (flipCount - cardsArray.length == 4) {
+      document.getElementById("score-count").innerHTML = "9 / 10";
+    } else if (flipCount - cardsArray.length == 6) {
+      document.getElementById("score-count").innerHTML = "8 / 10";
+    } else if (flipCount - cardsArray.length == 8) {
+      document.getElementById("score-count").innerHTML = "7 / 10";
+    } else if (flipCount - cardsArray.length == 10) {
+      document.getElementById("score-count").innerHTML = "6 / 10";
+    } else {
+      document.getElementById("score-count").innerHTML = "5 / 10";
+    }
+  } else {
+    if (flipCount - cardsArray.length <= 2) {
+      document.getElementById("score-count").innerHTML = "10 / 10";
+    } else if (flipCount - cardsArray.length == 4) {
+      document.getElementById("score-count").innerHTML = "9 / 10";
+    } else if (flipCount - cardsArray.length == 6) {
+      document.getElementById("score-count").innerHTML = "8 / 10";
+    } else if (flipCount - cardsArray.length == 8) {
+      document.getElementById("score-count").innerHTML = "7 / 10";
+    } else if (flipCount - cardsArray.length == 10) {
+      document.getElementById("score-count").innerHTML = "6 / 10";
+    } else {
+      document.getElementById("score-count").innerHTML = "5 / 10";
+    }
+  }
 }
 
 function goToHome(value) {
