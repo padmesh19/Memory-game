@@ -172,43 +172,43 @@ function gridWidth() {
 const cardsMainArray = [
   {
     name: "antman",
-    icon: '<img src="./public/antman.png" class="w-1/2">',
+    icon: '<img src="./public/antman.png" class="w-1/2" loading="eager">',
   },
   {
     name: "avengers",
-    icon: '<img src="./public/avengers.png" class="w-1/2">',
+    icon: '<img src="./public/avengers.png" class="w-1/2" loading="eager">',
   },
   {
     name: "batman",
-    icon: '<img src="./public/batman.png" class="w-1/2">',
+    icon: '<img src="./public/batman.png" class="w-1/2" loading="eager">',
   },
   {
     name: "deadpool",
-    icon: '<img src="./public/deadpool.png" class="w-1/2">',
+    icon: '<img src="./public/deadpool.png" class="w-1/2" loading="eager">',
   },
   {
     name: "ironman",
-    icon: '<img src="./public/ironman.png" class="w-1/2">',
+    icon: '<img src="./public/ironman.png" class="w-1/2" loading="eager">',
   },
   {
     name: "shield",
-    icon: '<img src="./public/shield.png" class="w-1/2">',
+    icon: '<img src="./public/shield.png" class="w-1/2" loading="eager">',
   },
   {
     name: "panther",
-    icon: '<img src="./public/panther.png" class="w-1/2">',
+    icon: '<img src="./public/panther.png" class="w-1/2" loading="eager">',
   },
   {
     name: "spidermask",
-    icon: '<img src="./public/spidermask.png" class="w-1/2">',
+    icon: '<img src="./public/spidermask.png" class="w-1/2" loading="eager">',
   },
   {
     name: "superman",
-    icon: '<img src="./public/superman.png" class="w-1/2">',
+    icon: '<img src="./public/superman.png" class="w-1/2" loading="eager">',
   },
   {
     name: "wolverine",
-    icon: '<img src="./public/wolverine.png" class="w-1/2">',
+    icon: '<img src="./public/wolverine.png" class="w-1/2" loading="eager">',
   },
 ];
 
