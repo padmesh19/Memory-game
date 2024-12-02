@@ -1,3 +1,46 @@
+const cardsMainArray = [
+  {
+    name: "antman",
+    icon: '<img src="./public/antman.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "avengers",
+    icon: '<img src="./public/avengers.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "batman",
+    icon: '<img src="./public/batman.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "deadpool",
+    icon: '<img src="./public/deadpool.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "ironman",
+    icon: '<img src="./public/ironman.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "shield",
+    icon: '<img src="./public/shield.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "panther",
+    icon: '<img src="./public/panther.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "spidermask",
+    icon: '<img src="./public/spidermask.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "superman",
+    icon: '<img src="./public/superman.png" class="w-1/2" loading="eager">',
+  },
+  {
+    name: "wolverine",
+    icon: '<img src="./public/wolverine.png" class="w-1/2" loading="eager">',
+  },
+];
+
 const gameBoard = document.getElementById("gameBoard");
 let width = document.body.offsetHeight + "px";
 gameBoard.style.width = width;
@@ -169,49 +212,6 @@ function gridWidth() {
   }
 }
 
-const cardsMainArray = [
-  {
-    name: "antman",
-    icon: '<img src="./public/antman.png" class="w-1/2">',
-  },
-  {
-    name: "avengers",
-    icon: '<img src="./public/avengers.png" class="w-1/2">',
-  },
-  {
-    name: "batman",
-    icon: '<img src="./public/batman.png" class="w-1/2">',
-  },
-  {
-    name: "deadpool",
-    icon: '<img src="./public/deadpool.png" class="w-1/2">',
-  },
-  {
-    name: "ironman",
-    icon: '<img src="./public/ironman.png" class="w-1/2">',
-  },
-  {
-    name: "shield",
-    icon: '<img src="./public/shield.png" class="w-1/2">',
-  },
-  {
-    name: "panther",
-    icon: '<img src="./public/panther.png" class="w-1/2">',
-  },
-  {
-    name: "spidermask",
-    icon: '<img src="./public/spidermask.png" class="w-1/2">',
-  },
-  {
-    name: "superman",
-    icon: '<img src="./public/superman.png" class="w-1/2">',
-  },
-  {
-    name: "wolverine",
-    icon: '<img src="./public/wolverine.png" class="w-1/2">',
-  },
-];
-
 let cardsArray = [];
 let flippedCards = [];
 let matchedPairs = 0;
@@ -354,7 +354,9 @@ function goToWin() {
   document.getElementById("game-page").style.display = "none";
   document.getElementById("won-page").style.display = "flex";
   document.getElementById("time").innerText = `${minutes} : ${seconds}`;
-  document.getElementById('show-name').innerHTML = `! Congratulations ${player} !`;
+  document.getElementById(
+    "show-name"
+  ).innerHTML = `! Congratulations ${player} !`;
   if (cardsArray.length == 12) {
     if (flipCount - cardsArray.length <= 2) {
       document.getElementById("score-count").innerHTML = "10 / 10";
@@ -410,5 +412,5 @@ function goToHome(value) {
 let player;
 
 function playerName() {
-  player = document.getElementById('player-name').value;
+  player = document.getElementById("player-name").value;
 }
