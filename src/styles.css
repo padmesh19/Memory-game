@@ -24,7 +24,7 @@ body{
 }
 
 .cardback{
-    @apply bg-gradient-to-tr from-[#000] to-[#444];
+    @apply bg-gradient-to-tr from-[#000] to-[#444] absolute top-0 left-0 w-full rounded-md h-full ;
 }
 .card-align{
     @apply h-full w-full justify-self-center rounded-md flex justify-center items-center relative;

@@ -292,10 +292,15 @@ function displayCards() {
   cardsArray.forEach((curr, index, arr) => {
     const card = document.createElement("div");
     card.setAttribute("id", index);
-    card.classList.add("cardback");
+    card.classList.add("relative");
     card.classList.add("card-align");
     card.classList.add("active");
     card.style.cursor = "pointer";
+    card.innerHTML = cardsArray[index].icon;
+    const cardBack = document.createElement('div');
+    cardBack.setAttribute("id", `cardBack-${index}`);
+    cardBack.classList.add("cardback");
+    card.appendChild(cardBack);
     gameBoard.append(card);
     card.addEventListener("click", flipCard);
   });
@@ -306,8 +311,7 @@ function flipCard() {
     let cardId = this.getAttribute("id");
     flippedCards.push(this);
     this.classList.remove("active");
-    this.classList.remove("cardback");
-    this.innerHTML = cardsArray[cardId].icon;
+    document.getElementById(`cardBack-${cardId}`).classList.add("hidden");
     if (flippedCards.length == 2) {
       setTimeout(checkMatch, 500);
     }
@@ -327,11 +331,9 @@ function checkMatch() {
     matchedPairs++;
     setTimeout(checkGameOver(), 500);
   } else {
-    flippedCards[0].innerHTML = "";
-    flippedCards[0].classList.add("cardback");
+    document.getElementById(`cardBack-${card1Id}`).classList.remove("hidden");
     flippedCards[0].classList.add("active");
-    flippedCards[1].innerHTML = "";
-    flippedCards[1].classList.add("cardback");
+    document.getElementById(`cardBack-${card2Id}`).classList.remove("hidden");
     flippedCards[1].classList.add("active");
   }
   flippedCards = [];
